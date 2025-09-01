@@ -33,7 +33,7 @@ function Home() {
         </div>
         <div className="middle-navigation">
           <MN className="MN MN-right" title="All Projects" id="projects" onClick={() => {navigate('/projects');}} />
-          <MN className="MN MN-right" title="Github" id="github" onClick={() => window.open('https://github.com/smoussavi00')} />
+          <MN className="MN MN-right" title="Github" id="github" onClick={() => window.open('https://github.com/soroushmoussavi')} />
           <MN className="MN MN-down" title="Fall 2025" />
         </div>
       </div>
