@@ -30,7 +30,7 @@ function Home() {
         </div>
         <div className="project-card" onClick={ () => window.open('https://github.com/soroushmoussavi/trees', '_blank', 'noopener,noreferrer')}>
           <img src="/images/trees-A.png" className="project-image" alt="trees" draggable={false} />
-          <p className="project-desc"> trees — a language </p>
+          <p className="project-desc"> trees : a language </p>
         </div>
         <div className="middle-navigation">
           <MN className="MN MN-right" title="All Projects" id="projects" onClick={() => {navigate('/projects');}} />
@@ -78,13 +78,13 @@ function Projects() {
           <div className="project-card project-card-long" onClick={ () => window.open('https://f1yaqnpm.notion.site/FGF-Fast-Game-Format-1b7b9b7edc458023824acc38e9568305', '_blank', 'noopener,noreferrer')}>
             <img src="/images/FGF-B.png" className="project-image project-image-long" alt="FGF" draggable={false} />
             <div className="project-desc-long">
-              <p>PGN is too slow and too large — FGF offers lossless compression and faster access times.</p>
+              <p>PGN is the format most typically used for storing chess games by online chess databases. While it may be readable, the time and space costs are difficult to ignore. In FGF, the most relevant games are kept (classical time controls, no early forfeits), and compressed into less than a fifth of the original size. </p>
             </div>
           </div>
           <div className="project-card project-card-long" onClick={ () => window.open('https://github.com/soroushmoussavi/trees', '_blank', 'noopener,noreferrer')}>
             <img src="/images/trees-B.png" className="project-image project-image-long" alt="trees" draggable={false} />
             <div className="project-desc-long">
-              <p>trees — a real language </p>
+              <p>trees : a functional-declarative language merging LISP and clinical simplicity </p>
             </div>
           </div>
         </div>
