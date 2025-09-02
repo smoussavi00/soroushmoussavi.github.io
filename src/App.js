@@ -29,7 +29,8 @@ function Home() {
           <p className="project-desc"> PGN is too slow and too large — FGF offers lossless compression and faster access times. </p>
         </div>
         <div className="project-card">
-          <img src="/images/socrates.jpeg" className="project-image" alt="Socrates" draggable={false} />
+          <img src="/images/trees-A.png" className="project-image" alt="trees" draggable={false} />
+          <p className="project-desc"> trees — a language </p>
         </div>
         <div className="middle-navigation">
           <MN className="MN MN-right" title="All Projects" id="projects" onClick={() => {navigate('/projects');}} />
@@ -79,7 +80,13 @@ function Projects() {
             <div className="project-desc-long">
               <p>PGN is too slow and too large — FGF offers lossless compression and faster access times.</p>
             </div>
+          </div>
+          <div className="project-card project-card-long">
+            <img src="/images/trees-B.png" className="project-image project-image-long" alt="trees" draggable={false} />
+            <div className="project-desc-long">
+              <p>trees — a real language </p>
             </div>
+          </div>
         </div>
 
     </div>
