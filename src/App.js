@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 function App() {
   return (
@@ -17,6 +18,17 @@ function App() {
 function Home() {
 
   const navigate = useNavigate();
+  const [data,setData] = useState(null);
+
+  useEffect(() => {
+    fetch("https://abacus.jasoncameron.dev/hit/smghio/visits")
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
+      .then((json) => setData(json))
+      .catch((err) => console.log(err.message));
+  }, []);
 
   return (
     <div className="container">
@@ -35,7 +47,7 @@ function Home() {
         <div className="middle-navigation">
           <MN className="MN MN-right" title="All Projects" id="projects" onClick={() => {navigate('/projects');}} />
           <MN className="MN MN-right" title="Github" id="github" onClick={() => window.open('https://github.com/soroushmoussavi')} />
-          <MN className="MN MN-down" title="Fall 2025" />
+          <MN className="MN MN-down" title="Fall 2025"/>
         </div>
       </div>
 
@@ -44,7 +56,7 @@ function Home() {
         <div className="bottom-left">
           <div className="info" id="profile">
             <img id="sepiated" src="/images/sepiated.png" alt="Profile" />
-            <p id="desc">Hey! My name is Soroush and I am a new graduate from Carleton U.</p>
+            <p className="desc">Hey! My name is Soroush and I am a new graduate from Carleton U. </p>
           </div>
           <div className="info info-rings" id="rings-profile">
             <RING size="large" desc="Infrastructure — Fullstack" />
@@ -53,12 +65,18 @@ function Home() {
           </div>
         </div>
 
-        <MN className="MN MN-right" title="Education, Experience, and Skills" id="expedition" onClick={() => navigate('/expedition')} />
+        <div className="bottom-right">
+          <MN className="MN MN-right" title="Education, Experience, and Skills" id="expedition" onClick={() => navigate('/expedition')} />
+          <MN className="MN MN-nil" id="views" title={data ? data["value"] + " views" : '...'} />
+        </div>
       </div>
       
     </div>
   );
 }
+
+//           <div className="info info-views">   </div>
+
 
 function Projects() {
 
@@ -70,7 +88,7 @@ function Projects() {
         <HEADING/>
 
         <div className="middle-row-alt">  
-          <MN className="MN MN-nil" title="All Projects"  />
+          <MN className="MN MN-nil-more" title="All Projects"  />
           <MN className="MN MN-left" title="Return" id="return" onClick={() => {navigate('/')}} />
         </div>
 
@@ -103,7 +121,7 @@ function Expedition() {
         <HEADING/>
 
         <div className="middle-row-alt">  
-          <MN className="MN MN-nil" title="Education, Experience, and Skills"  />
+          <MN className="MN MN-nil-more" title="Education, Experience, and Skills"  />
           <MN className="MN MN-left" title="Return" id="return" onClick={() => {navigate('/')}} />
         </div>
 
@@ -158,7 +176,7 @@ function HEADING() {
             <h3 id="subtitle"> Software Engineer — Ottawa, ON </h3>
           </div>
           <div className="image">
-            <img id="glyph" src="/images/GLYPH3.png" alt="Glyph" />
+            <img id="glyph" src="/images/GLYPH3.png" alt="Glyph" draggable={false} />
           </div>
      </div>
   )

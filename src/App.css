@@ -170,7 +170,7 @@ body, html, #root {
   user-select: none;
 }
 
-.MN-nil{
+.MN-nil-more{
   width: 372px;
 }
 
@@ -183,13 +183,13 @@ body, html, #root {
   color: var(--nearlast);
 }
 
-.MN-down:hover, .MN-nil:hover{
+.MN-down:hover, .MN-nil-more:hover, .MN-nil:hover{
     background-color: var(--second);
     cursor: default;
 }
 
 #expedition {
-  width: calc(49% - 24px);
+  width: calc(100% - 24px);
   flex-direction: column;
   justify-content: space-between;
   align-items: stretch;
@@ -248,6 +248,11 @@ body, html, #root {
   justify-content: center;
   align-items: flex-start;
   gap: 6px;
+}
+
+#views {
+  width: calc(100% - 24px);
+  color: var(--nearlast);
 }
 
 .ring {
@@ -310,7 +315,7 @@ body, html, #root {
   border-radius: 8px;
 }
 
-#desc {
+.desc {
   width: 100%;
   margin: 0;
 }
